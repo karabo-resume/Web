@@ -1,0 +1,263 @@
+    <!DOCTYPE html>
+    <html lang="en" >
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Karabo Mamaseli - Interstellar Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Starry background */
+        body {
+        background: radial-gradient(ellipse at bottom, #0b0c1a 0%, #000000 100%);
+        overflow-x: hidden;
+        color: #e0e7ff;
+        font-family: 'Poppins', sans-serif;
+        }
+        .stars {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: transparent url('https://cdn.jsdelivr.net/gh/joshtronic/tiny-starfield/starfield.png') repeat;
+        background-size: contain;
+        z-index: -1;
+        animation: moveStars 60s linear infinite;
+        }
+        @keyframes moveStars {
+        from {background-position: 0 0;}
+        to {background-position: 10000px 0;}
+        }
+        /* Floating nebula/planet shapes */
+        .float1, .float2, .float3 {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(50px);
+        opacity: 0.7;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        }
+        .float1 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(135deg, #7f5af0, #1fb6ff);
+        top: 10%;
+        left: 5%;
+        animation-name: float1;
+        animation-duration: 12s;
+        }
+        .float2 {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, #ff49db, #ff7849);
+        top: 50%;
+        right: 10%;
+        animation-name: float2;
+        animation-duration: 15s;
+        }
+        .float3 {
+        width: 250px;
+        height: 250px;
+        background: linear-gradient(135deg, #13ce66, #64d2ff);
+        bottom: 15%;
+        left: 50%;
+        animation-name: float3;
+        animation-duration: 10s;
+        }
+        @keyframes float1 {
+        0% {transform: translateY(0px) translateX(0);}
+        100% {transform: translateY(25px) translateX(25px);}
+        }
+        @keyframes float2 {
+        0% {transform: translateY(0) translateX(0);}
+        100% {transform: translateY(-30px) translateX(15px);}
+        }
+        @keyframes float3 {
+        0% {transform: translateY(0) translateX(0);}
+        100% {transform: translateY(20px) translateX(-20px);}
+        }
+        /* Glowing text effect */
+        .glow-text {
+        text-shadow:
+            0 0 5px #7f5af0,
+            0 0 10px #7f5af0,
+            0 0 20px #7f5af0,
+            0 0 40px #7f5af0,
+            0 0 80px #7f5af0;
+        animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+        @keyframes pulseGlow {
+        0% {text-shadow:
+            0 0 5px #7f5af0,
+            0 0 10px #7f5af0,
+            0 0 20px #7f5af0,
+            0 0 40px #7f5af0,
+            0 0 80px #7f5af0;}
+        100% {text-shadow:
+            0 0 10px #ff49db,
+            0 0 20px #ff49db,
+            0 0 40px #ff49db,
+            0 0 80px #ff49db,
+            0 0 160px #ff49db;}
+        }
+        /* Section fade-in */
+        .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+        }
+        .fade-in.delay-1 {animation-delay: 0.5s;}
+        .fade-in.delay-2 {animation-delay: 1s;}
+        .fade-in.delay-3 {animation-delay: 1.5s;}
+        .fade-in.delay-4 {animation-delay: 2s;}
+        .fade-in.delay-5 {animation-delay: 2.5s;}
+        .fade-in.delay-6 {animation-delay: 3s;}
+        @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+        /* Glowing button */
+        .btn-glow {
+        background: linear-gradient(90deg, #7f5af0, #ff49db);
+        box-shadow: 0 0 15px #7f5af0;
+        transition: box-shadow 0.3s ease;
+        }
+        .btn-glow:hover {
+        box-shadow:
+            0 0 10px #ff49db,
+            0 0 20px #ff49db,
+            0 0 30px #ff49db,
+            0 0 40px #ff49db;
+        transform: scale(1.05);
+        }
+    </style>
+    </head>
+    <body>
+
+    <div class="stars"></div>
+    <div class="float1"></div>
+    <div class="float2"></div>
+    <div class="float3"></div>
+
+    <header class="container mx-auto px-6 pt-10 pb-6 flex flex-col md:flex-row md:justify-between items-center">
+        <h1 class="text-5xl font-extrabold glow-text select-none">Karabo Mamaseli</h1>
+        <nav class="mt-6 md:mt-0 text-indigo-300 font-medium space-x-6">
+        <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
+        <a href="#about" class="hover:text-pink-400 transition">About Me</a>
+        <a href="#experience" class="hover:text-pink-400 transition">Experience</a>
+        <a href="#skills" class="hover:text-pink-400 transition">Skills</a>
+        <a href="#education" class="hover:text-pink-400 transition">Education</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 max-w-4xl space-y-16">
+
+        <section id="contact" class="fade-in delay-1 bg-gray-900/60 rounded-lg p-8 shadow-lg border border-indigo-700">
+        <h2 class="text-3xl font-bold mb-4 text-indigo-400 tracking-wide">Contact</h2>
+        <ul class="text-indigo-200 space-y-2 text-lg">
+            <li><strong>Email:</strong> <a href="mailto:mamaselikarabo97@gmail.com" class="underline hover:text-pink-400">mamaselikarabo97@gmail.com</a></li>
+            <li><strong>Phone:</strong> +27-68-659-3233</li>
+            <li><strong>Location:</strong> Stone River Estate, Fourways</li>
+        </ul>
+        <button
+            class="mt-6 px-6 py-3 rounded-full btn-glow font-semibold text-white tracking-wider"
+            onclick="window.location.href='mailto:mamaselikarabo97@gmail.com'"
+            >
+            Send Email
+        </button>
+
+        </section>
+
+        <section id="about" class="fade-in delay-2 bg-gray-900/60 rounded-lg p-8 shadow-lg border border-indigo-700">
+        <h2 class="text-3xl font-bold mb-4 text-indigo-400 tracking-wide">About Me</h2>
+        <p class="mb-4 text-indigo-100 leading-relaxed">
+            I am a highly driven individual with a goal-orientated mindset. Having completed my NSC, I further went on to develop my skills in Counselling Management.
+            This qualification embodies my desire to not only improve my offering in any given business, but to ensure that I am able to make an impact in the lives of those around me in the process.
+        </p>
+        <p class="mb-4 text-indigo-200 leading-relaxed">
+            Joined @Home Living Space in May 2024 as a sales associate and have been developing retail skills over the past seven months. New to the retail industry, I adapted quickly to the dynamic environment, learning the details and complexities of customer service, product organization, and store operations.
+        </p>
+        <p class="text-indigo-200 leading-relaxed">
+            Joined CTM Northriding in February 2025, promptly adapting to the fast-paced retail environment while gaining experience in both internal and external sales.
+            I actively engage with clients to understand their needs, offer tailored product solutions, and drive business growth.
+            My role involves maintaining high standards of customer service, store presentation, and inventory management.
+        </p>
+        </section>
+
+        <section id="experience" class="fade-in delay-3 bg-gray-900/60 rounded-lg p-8 shadow-lg border border-indigo-700">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-400 tracking-wide">Experience</h2>
+
+        <article class="mb-8">
+            <h3 class="text-2xl font-semibold text-pink-400 mb-2">TFG - @Home Living Space</h3>
+            <p class="italic text-indigo-300 mb-2">Retail | May 2024 – January 2025 | 9 months</p>
+            <ul class="list-disc list-inside space-y-1 text-indigo-200">
+            <li>External Sales</li>
+            <li>Internal Sales</li>
+            <li>Customer Service Delivery</li>
+            <li>Addresses Client Needs</li>
+            <li>Inventory Management</li>
+            </ul>
+            <p class="mt-3 text-indigo-300 font-semibold">References:</p>
+            <ul class="list-disc list-inside ml-6 text-indigo-400">
+            <li>Yolisa Mtumtum: Furniture Consultant +27-81-267-9189</li>
+            <li>Nosipho Radebe: Admin Controller +27-66-204-9254</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3 class="text-2xl font-semibold text-pink-400 mb-2">CTM Northriding</h3>
+            <p class="italic text-indigo-300 mb-2">Malibongwe Dr, Hoogland, Randburg, 2169 | February 2025 – Current | 5 Months</p>
+            <ul class="list-disc list-inside space-y-1 text-indigo-200">
+            <li>External Sales</li>
+            <li>Internal Sales</li>
+            <li>Take initiative in identifying and nurturing new client connections to accelerate business development.</li>
+            <li>Deliver an exceptional in-store experience by maintaining top-tier presentation and product availability.</li>
+            <li>Deliver targeted product offerings that address the unique requirements of each customer.</li>
+            <li>Customer Service Delivery</li>
+            <li>Inventory Management</li>
+            </ul>
+            <p class="mt-3 text-indigo-300 font-semibold">Reference:</p>
+            <p class="text-indigo-400">Melody: Sales Associate +27-71-553-0774</p>
+        </article>
+        </section>
+
+        <section id="skills" class="fade-in delay-4 bg-gray-900/60 rounded-lg p-8 shadow-lg border border-indigo-700">
+        <h2 class="text-3xl font-bold mb-4 text-indigo-400 tracking-wide">Skills</h2>
+        <ul class="list-disc list-inside space-y-2 text-indigo-200 text-lg">
+            <li>End-User Computing Skills</li>
+            <li>In-store Sales Skills</li>
+            <li>Customer Loyalty Building</li>
+            <li>Maintaining Digital Communication with Customers</li>
+            <li>Navigating Customer Challenges</li>
+            <li>Negotiation and Selling</li>
+            <li>Planning and Organizing</li>
+            <li>Customer Service Delivery</li>
+            <li>Customer-Focused Approach</li>
+        </ul>
+        </section>
+
+        <section id="education" class="fade-in delay-5 bg-gray-900/60 rounded-lg p-8 shadow-lg border border-indigo-700 mb-20">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-400 tracking-wide">Education</h2>
+
+        <article class="mb-6">
+            <h3 class="text-2xl font-semibold text-pink-400 mb-1">Boston City College</h3>
+            <p class="italic text-indigo-300 mb-1">Higher Counselling Management | 2022 – 2023 (Pending Completion)</p>
+            <p class="text-indigo-200">Modules: Academic Literacy, Applied Psychology, Nutrition, and Management</p>
+        </article>
+
+        <article>
+            <h3 class="text-2xl font-semibold text-pink-400 mb-1">Rutasetjhaba Secondary School</h3>
+            <p class="italic text-indigo-300 mb-1">Matric | 2021</p>
+            <p class="text-indigo-200">Subjects: English FAL, Sesotho Home Language, Geography, Mathematics, Physical Sciences, Life Orientation, Life Sciences</p>
+        </article>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-indigo-300 select-none">
+        &copy; 2025 Karabo Mamaseli
+    </footer>
+
+    </body>
+    </html>
